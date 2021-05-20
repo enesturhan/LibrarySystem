@@ -1,0 +1,67 @@
+﻿@model library.Models.Entity.TBLUser
+@{
+    ViewBag.Title = "UpdateUser";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>UpdateUser</h2>
+
+@using (Html.BeginForm("SaveUser", "User", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.UserID)
+        @Html.TextBoxFor(c => c.UserID, new { @class = "form-control" })
+
+        <br />
+        @Html.LabelFor(c => c.UserName)
+        @Html.TextBoxFor(c => c.UserName, new { @class = "form-control" })
+
+        <br />
+        @Html.LabelFor(c => c.UserSurname)
+        @Html.TextBoxFor(c => c.UserUsername, new { @class = "form-control" })
+
+        <br />
+        @Html.LabelFor(c => c.UserMail)
+        @Html.TextBoxFor(c => c.UserMail, new { @class = "form-control" })
+
+        <br />
+        @Html.LabelFor(c => c.UserUsername)
+        @Html.TextBoxFor(c => c.UserUsername, new { @class = "form-control" })
+
+        <br />
+        @Html.LabelFor(c => c.UserPassword)
+        @Html.TextBoxFor(c => c.UserPassword, new { @class = "form-control" })
+
+        <br />
+        @Html.LabelFor(c => c.UserPicture)
+        @Html.TextBoxFor(c => c.UserPicture, new { @class = "form-control" })
+
+        <br />
+        @Html.LabelFor(c => c.UserPhone)
+        @Html.TextBoxFor(c => c.UserPhone, new { @class = "form-control" })
+
+        <br />
+        @Html.LabelFor(c => c.UserSchool)
+        @Html.TextBoxFor(c => c.UserSchool, new { @class = "form-control" })
+
+        <br />
+        @Html.LabelFor(c => c.LibraryID)
+        @Html.DropDownListFor(c => c.Libraries.LibrariesID, (List<SelectListItem>)ViewBag.value3, new { @class = "form-control" })
+        <br />
+
+        @Html.LabelFor(c => c.UserDetail)
+        @Html.TextBoxFor(c => c.UserDetail, new { @class = "form-control" })
+
+
+
+        <br />
+
+    </div>
+    <div>
+
+        <button class="btn btn-warning"> Update</button>
+    </div>
+}
+
+

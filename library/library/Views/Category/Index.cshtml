@@ -1,0 +1,34 @@
+﻿@using library.Models.Entity
+@model List<TBLCategory>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Categories</h2>
+
+<table class="table table-bordered">
+
+    <tr>
+
+        <th>Category ID</th>
+        <th>Category Name</th>
+        <th>Category Delete</th>
+        <th>Category Update</th>
+    </tr>
+    @foreach (var cat in Model)
+    {
+
+
+    <tr>
+        <td>@cat.CategoryID</td>
+        <td>@cat.Name</td>
+        <td><a href="/Category/UpdateCategory/@cat.CategoryID" class="btn btn-success">Update</a></td>
+        <td><a href="/Category/DeleteCategory/@cat.CategoryID" class="btn btn-danger">Delete</a></td>
+
+
+    </tr>
+    }
+
+</table>
+<a href="/Category/AddCategory/"  class="btn btn-primary">Add Category </a>

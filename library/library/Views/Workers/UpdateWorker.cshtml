@@ -1,0 +1,35 @@
+﻿@model library.Models.Entity.TBLWorker
+@{
+    ViewBag.Title = "UpdateWorker";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>UpdateWorker</h2>
+
+
+@using (Html.BeginForm("SaveWorker", "Workers", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.WorkerID)
+        @Html.TextBoxFor(c => c.WorkerID, new { @class = "form-control" })
+
+        <br />
+        @Html.LabelFor(c => c.WorkerNameSurname)
+        @Html.TextBoxFor(c => c.WorkerNameSurname, new { @class = "form-control" })
+        <br />
+
+        @Html.LabelFor(c => c.WorkerDetail)
+        @Html.TextBoxFor(c => c.WorkerDetail, new { @class = "form-control" })
+
+        <br />
+        @Html.LabelFor(c => c.LibraryID)
+        @Html.DropDownListFor(c => c.Libraries.LibrariesID, (List<SelectListItem>)ViewBag.value3, new { @class = "form-control" })
+        <br />
+    </div>
+    <div>
+
+        <button class="btn btn-warning"> Update</button>
+    </div>
+}
+

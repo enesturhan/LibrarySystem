@@ -1,0 +1,53 @@
+﻿@using library.Models.Entity
+@model List<TBLUser>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>User ID</th>
+        <th>User Name</th>
+        <th>User Surname</th>
+        <th>User Mail</th>
+        <th>User username</th>
+        <th>User Password</th>
+        <th>User Picture</th>
+        <th>User Phone</th>
+       
+       
+        <th>User Scholl</th>
+        <th>Library id</th>
+        <th>User Detail</th>
+        <th>User Update</th>
+        <th>User Delete</th>
+    </tr>
+
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.UserID</td>
+            <td>@user.UserName</td>
+            <td>@user.UserSurname</td>
+            <td>@user.UserMail</td>
+            <td>@user.UserUsername</td>
+            <td>@user.UserPassword</td>
+            <td>@user.UserPicture</td>
+            <td>@user.UserPhone</td>
+            <td>@user.UserSchool</td>
+            <td>@user.Libraries.LibraryName</td>
+            <td>@user.UserDetail</td>
+
+          
+            <td><a href="/User/UpdateUser/@user.UserID" class="btn btn-success">Update</a></td>
+            <td>@Html.ActionLink("Delete", "DeleteUser", new { id = user.UserID }, new { @class = "btn btn-danger ", onclick = "return confirm('Do you want to delete ? ')" })</td>
+        </tr>
+    }
+
+</table>
+<a href="/User/AddUser/" class="btn btn-primary">Add User </a>

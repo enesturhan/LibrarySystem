@@ -1,0 +1,36 @@
+﻿@using library.Models.Entity
+@model List<TBLWorker>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Worker ID</th>
+        <th>Worker Name</th>
+        <th>Worker Location</th>
+        <th>Worrker Detail</th>
+        <th>Worker Update</th>
+        <th>Worker Delete</th>
+    </tr>
+    
+    @foreach( var aut in Model)
+    {
+    <tr>
+        <td>@aut.WorkerID</td>
+        <td>@aut.WorkerNameSurname</td>
+
+        <td>@aut.LibraryID</td>
+        <td>@aut.WorkerDetail</td>
+        <td><a href="/Workers/UpdateWorker/@aut.WorkerID" class="btn btn-success">Update</a></td>
+        <td>@Html.ActionLink("Delete", "DeleteWork", new { id = aut.WorkerID }, new { @class = "btn btn-danger ", onclick = "return confirm('Do you want to delete ? ')" })</td>
+    </tr>
+  }
+
+</table>
+<a href="/Workers/AddWorker/" class="btn btn-primary">Add Category </a>

@@ -1,0 +1,33 @@
+﻿@model library.Models.Entity.TblAuthor
+@{
+    ViewBag.Title = "UpdateAuthor";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>UpdateAuthor</h2>
+
+
+@using (Html.BeginForm("SaveAuthor", "Author", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.authorID)
+        @Html.TextBoxFor(c => c.authorID, new { @class = "form-control" })
+
+        <br />
+        @Html.LabelFor(c => c.authorName)
+        @Html.TextBoxFor(c => c.authorName, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(c => c.authorSurname)
+        @Html.TextBoxFor(c => c.authorSurname, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(c => c.authorDetail)
+        @Html.TextAreaFor(c => c.authorDetail, new { @class = "form-control" })
+        <br />
+    </div>
+    <div>
+
+        <button class="btn btn-warning"> Update</button>
+    </div>
+}
+

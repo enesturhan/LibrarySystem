@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0153f4e3bddb434cad77e4fc31974b03" Name="Diagram1">
+        <EntityTypeShape EntityType="LibraryModel.Libraries" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Library1" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Library2" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Library3" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Library4" Width="1.5" PointX="2.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.Library5" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.TBLAction" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.TblAuthor" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.TBLBook" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.TBLCategory" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.TBLMoney" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.TBLPunishment" Width="1.5" PointX="7.5" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.TBLUser" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LibraryModel.TBLWorker" Width="1.5" PointX="3" PointY="18.5" IsExpanded="true" />
+        <AssociationConnector Association="LibraryModel.FK_TBLAction_Libraries" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_TBLAction_Libraries1" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_TblAuthor_Libraries" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_TBLBook_Libraries" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_TBLMoney_Libraries" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_TBLPunishment_Libraries" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_TBLUser_Libraries" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_TBLWorker_Libraries" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_TBLAction_TBLBook" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_TBLAction_TBLUser" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_TBLPunishment_TBLAction" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_TBLBook_TblAuthor" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_TBLBook_TBLCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_TBLPunishment_TBLUser" ManuallyRouted="false" />
+        <AssociationConnector Association="LibraryModel.FK_TBLAction_TBLWorker" />
+      </Diagram>
+      <Diagram DiagramId="c170d0eeae534b2dadfe9f54dbb97821" Name="Diagram2" >
+        <EntityTypeShape EntityType="LibraryModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

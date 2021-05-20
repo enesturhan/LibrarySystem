@@ -1,0 +1,54 @@
+﻿@model library.Models.Entity.TBLBook
+@{
+    ViewBag.Title = "UpdateBook";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>UpdateBook</h2>
+
+
+@using (Html.BeginForm("SaveBook", "Book", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+
+        @Html.LabelFor(c => c.bookID)
+        @Html.TextBoxFor(c => c.bookID, new { @class = "form-control" })
+
+        <br />
+        @Html.LabelFor(c => c.bookName)
+        @Html.TextBoxFor(c => c.bookName, new { @class = "form-control" })
+
+        <br />
+
+        @Html.LabelFor(c => c.bookCategory)
+        @Html.DropDownListFor(c => c.TBLCategory.CategoryID, (List<SelectListItem>)ViewBag.value, new { @class = "form-control" })
+        <br />
+
+        @Html.LabelFor(c => c.bookAuthor)
+        @Html.DropDownListFor(c => c.TblAuthor.authorID, (List<SelectListItem>)ViewBag.value2, new { @class = "form-control" })
+        <br />
+
+        @Html.LabelFor(c => c.bookYear)
+        @Html.TextAreaFor(c => c.bookYear, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(c => c.bookPublisher)
+        @Html.TextAreaFor(c => c.bookPublisher, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(c => c.bookPage)
+        @Html.TextAreaFor(c => c.bookPage, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(c => c.bookCase)
+        @Html.TextAreaFor(c => c.bookCase, new { @class = "form-control" })
+        <br />
+
+        @Html.LabelFor(c => c.LibraryID)
+        @Html.DropDownListFor(c => c.Libraries.LibrariesID, (List<SelectListItem>)ViewBag.value3, new { @class = "form-control" })
+        <br />
+    </div>
+    <div>
+
+        <button class="btn btn-warning"> Update Book</button>
+    </div>
+}
+

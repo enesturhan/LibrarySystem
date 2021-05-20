@@ -1,0 +1,24 @@
+﻿@model library.Models.Entity.TBLCategory
+@{
+    ViewBag.Title = "UpdateCategory";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>UpdateCategory</h2>
+
+@using (Html.BeginForm("SaveCategory", "Category", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.CategoryID)
+        @Html.TextBoxFor(c => c.CategoryID, new { @class = "form-control" })
+
+        <br />
+        @Html.LabelFor(c => c.Name)
+        @Html.TextBoxFor(c => c.Name, new { @class = "form-control" })
+    </div>
+    <div>
+
+        <button class="btn btn-warning"> Update</button>
+    </div>
+}

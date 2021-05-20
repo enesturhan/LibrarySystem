@@ -1,0 +1,31 @@
+﻿@model library.Models.Entity.TBLWorker
+@{
+    ViewBag.Title = "AddWorker";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>AddWorker</h2>
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Worker Name</label>
+        <input type="text" class="form-control" name="WorkerNameSurname" />
+
+    </div>
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Worker Detail</label>
+        <input type="text" class="form-control" name="WorkerDetail" />
+
+    </div>
+    <div style="margin-top:15px">
+        <label>Location</label>
+       
+        @Html.DropDownListFor(b => b.Libraries.LibrariesID, (List<SelectListItem>)ViewBag.value3, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class=" btn btn-info" id="Button1">Add Worker</button>
+    </div>
+
+</form>

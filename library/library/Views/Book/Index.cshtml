@@ -1,0 +1,58 @@
+﻿@using library.Models.Entity
+@model List<TBLBook>
+
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Book Page</h2>
+
+@using (Html.BeginForm("Index", "Book", FormMethod.Get))
+{
+    <div style="margin-bottom:15px; margin-top:15px;">
+        <b> Search book: &nbsp</b> @Html.TextBox("p")
+        <input type="submit" value="Search" />
+    </div>
+}
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>ID</th>
+        <th>Book Name</th>
+        <th>Book Author</th>
+        <th>Book Category</th>
+        <th>Book Year</th>
+        <th>Book Publisher</th>
+        <th>Book Page</th>
+        <th>Book Case</th>
+        <th>Location</th>
+        <th>Update</th>
+        <th>Delete</th>
+       
+    </tr>
+
+    @foreach (var book in Model)
+    {
+        <tr>
+            <td>@book.bookID</td>
+            <td>@book.bookName.</td>
+            <td>@book.TblAuthor.authorName &nbsp @book.TblAuthor.authorSurname </td>
+            <td>@book.TBLCategory.Name</td>
+            <td>@book.bookYear</td>
+            <td>@book.bookPublisher</td>
+            <td>@book.bookPage</td>
+            <td>@book.bookCase</td>
+            <td>@book.LibraryID</td>
+        
+
+            <td><a href="/Book/UpdateBook/@book.bookID" class="btn btn-success">Update</a></td>
+            <td>@Html.ActionLink("Delete", "DeleteBook", new { id = book.bookID }, new { @class = "btn btn-danger ", onclick = "return confirm('Do you want to delete ? ')" })</td>
+        </tr>
+    }
+</table>
+
+<a href="/Book/AddBook/" class="btn btn-primary">Add Book</a>
